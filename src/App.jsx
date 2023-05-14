@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import BarChart from './BarChart'
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
         const groupedWithCompleted = groupedByUser.map(user => {
           const completed = user.filter(todo => todo.completed).length
           const notCompleted = user.filter(todo => !todo.completed).length
-          return {data: [...user], completed, notCompleted }
+          return { data: [...user], completed, notCompleted }
         });
 
         // Sort users
@@ -40,25 +41,27 @@ function App() {
 
 
   let todoItems = []
-  const userItems = todosByUser.map((user, index) =>  
+  const userItems = todosByUser.map((user, index) =>
     <div className='box' key={`user${user.data[index].userId}`}>
-      User {user.data[index].userId} <span id='completed'>{user.completed}</span> / <span id='notCompleted'>{user.notCompleted}</span>
+      <strong>User {user.data[index].userId} <span id='completed'>{user.completed}</span> / <span id='notCompleted'>{user.notCompleted}</span></strong>
       <ul>{todoItems = user.data.map(todo =>
-          <li key={todo.id}>
-            {todo.title}
-          </li>
+        <li key={todo.id}>
+          {todo.title}
+        </li>
       )}</ul>
     </div>
-    )
+  )
 
   return (
     <>
       <form id='form' onSubmit={fetchItems}>
-        <button disabled={loading.btnDisabled} id="btn">Send Request</button>
+        <button disabled={loading.btnDisabled} id="btn">Fetch Data</button>
         <div className={loading.preloader}></div>
       </form>
 
       <div id='container'>{userItems}</div>
+      
+      <BarChart todosByUser={todosByUser}/>
     </>
   )
 }
