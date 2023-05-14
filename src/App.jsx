@@ -32,8 +32,6 @@ function App() {
         const sorted = groupedWithCompleted.toSorted((a, b) => {
           return b.completed - a.completed
         })
-        // console.log(groupedWithCompleted)
-        // console.log("sorted", sorted)
         setTodosByUser(sorted)
       })
     setLoading({ btnDisabled: false, preloader: "" })
@@ -41,9 +39,15 @@ function App() {
 
 
   let todoItems = []
-  const userItems = todosByUser.map((user, index) =>
-    <div className='box' key={`user${user.data[index].userId}`}>
-      <strong>User {user.data[index].userId} <span id='completed'>{user.completed}</span> / <span id='notCompleted'>{user.notCompleted}</span></strong>
+  const userItems = todosByUser.map((user, i) =>
+    <div className='card' key={`user${user.data[i].userId}`}>
+      <div className='card-title'>
+        <span>User {user.data[i].userId}</span>
+        <span>
+          <span id='completed'>{user.completed}</span> /  
+          <span id='notCompleted'> {user.notCompleted}</span>
+        </span>
+      </div>
       <ul>{todoItems = user.data.map(todo =>
         <li key={todo.id}>
           {todo.title}
@@ -54,14 +58,14 @@ function App() {
 
   return (
     <>
+      <div id='main'>
       <form id='form' onSubmit={fetchItems}>
-        <button disabled={loading.btnDisabled} id="btn">Fetch Data</button>
+        <button autoFocus={true} disabled={loading.btnDisabled} id="btn">Fetch Data</button>
         <div className={loading.preloader}></div>
       </form>
-
       <div id='container'>{userItems}</div>
-      
       <BarChart todosByUser={todosByUser}/>
+      </div>
     </>
   )
 }

@@ -27,6 +27,7 @@
   border-radius: 5px;
   border: solid 1px black;
   font-size: large;
+  box-shadow: 10px 10px 15px rgba(221, 214, 214, 0.589);
 }
 
 #container {
@@ -36,14 +37,19 @@
   justify-content: space-evenly;
   column-gap: 3rem;
   row-gap: 2rem;
-  margin: 2rem;
+  margin: 4rem 0;
 }
 
-.box {
+#main {
+  margin: 4rem;
+}
+
+.card {
   border: solid 1px grey;
   border-radius: 10px;
   padding: 1rem;
   max-width: 20rem;
+  box-shadow: 10px 10px 15px rgba(221, 214, 214, 0.589);
 }
 
 #completed {
@@ -53,4 +59,11 @@
 
 #notCompleted {
   color: red;
+}
+
+.card-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: bold;
 }
