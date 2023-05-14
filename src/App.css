@@ -35,21 +35,13 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  column-gap: 3rem;
-  row-gap: 2rem;
+  column-gap: 2rem;
+  row-gap: 4rem;
   margin: 4rem 0;
 }
 
 #main {
   margin: 4rem;
-}
-
-.card {
-  border: solid 1px grey;
-  border-radius: 10px;
-  padding: 1rem;
-  max-width: 20rem;
-  box-shadow: 10px 10px 15px rgba(221, 214, 214, 0.589);
 }
 
 #completed {
@@ -66,4 +58,5 @@
   flex-direction: row;
   justify-content: space-between;
   font-weight: bold;
+  margin: 1rem;
 }
