@@ -7,12 +7,15 @@ import UserCards from './UserCards'
 // App component.
 function App() {
 
+  // Hooks
+  // 
   // State for fetched and processed data.
   const [todosByUser, setTodosByUser] = useState([])
 
   // State for button and preloader.
   const [loading, setLoading] = useState({ btnDisabled: false, preloader: "" })
 
+  // Helper function
   async function fetchItems(e) {
 
     // Disable button and show preloader.
@@ -20,6 +23,9 @@ function App() {
 
     // Prevent default form submission behaviour.
     e.preventDefault()
+
+    // Create a variable for fetched data.
+    const data = []
 
     // Fetch todos from url.
     await fetch("https://jsonplaceholder.typicode.com/todos")
@@ -67,7 +73,7 @@ function App() {
           <button autoFocus={true} disabled={loading.btnDisabled} id="btn">Fetch Data</button>
 
           {/* Preloader */}
-          <div className={loading.preloader}></div>
+          <div id={loading.preloader}></div>
         </form>
 
         {/* User cards. */}

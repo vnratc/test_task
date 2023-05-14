@@ -13,7 +13,6 @@ import { Stack, Animation } from '@devexpress/dx-react-chart';
 
 export default function BarChart({ todosByUser }) {
   if (todosByUser.length) {
-    if (todosByUser.length) console.log(todosByUser)
     const myData = todosByUser.map(item => {
       return { user: `User ${item.data[0].userId}`, completed: item.completed, notCompleted: item.notCompleted }
     }).reverse()

@@ -1,4 +1,4 @@
-.preloader {
+#preloader {
   margin: 1rem;
   border: 6px solid #f3f3f3;
   border-top: 6px solid #3498db;
@@ -42,21 +42,4 @@
 
 #main {
   margin: 4rem;
-}
-
-#completed {
-  margin-left: 1rem;
-  color: green;
-}
-
-#notCompleted {
-  color: red;
-}
-
-.card-title {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-weight: bold;
-  margin: 1rem;
 }

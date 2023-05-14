@@ -5,3 +5,20 @@
   max-width: 25rem;
   box-shadow: 10px 10px 15px rgba(221, 214, 214, 0.589);
 }
+
+.completed {
+  margin-left: 1rem;
+  color: green;
+}
+
+.notCompleted {
+  color: red;
+}
+
+.card-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: bold;
+  margin: 1rem;
+}
